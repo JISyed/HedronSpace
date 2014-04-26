@@ -50,6 +50,31 @@ namespace sfew
 		itemGetSound->SetName("ItemGetSnd");
 		_resourceList.push_front(itemGetSound);
 
+		// Load the Enemy Death Sound
+		std::shared_ptr<AudioSource> enemyDeathSound(new AudioSource("./Audio/sndEnemyDeath.wav", AudioType::Sound) );
+		enemyDeathSound->SetName("EnemyDeathSnd");
+		_resourceList.push_front(enemyDeathSound);
+
+		// Load the Enemy Laser Sound
+		std::shared_ptr<AudioSource> enemyLaserSound(new AudioSource("./Audio/sndEnemyLaser.wav", AudioType::Sound) );
+		enemyLaserSound->SetName("EnemyLaserSnd");
+		_resourceList.push_front(enemyLaserSound);
+
+		// Load the Game Over Sound
+		std::shared_ptr<AudioSource> gameOverSound(new AudioSource("./Audio/sndGameOver.wav", AudioType::Sound) );
+		gameOverSound->SetName("GameOverSnd");
+		_resourceList.push_front(gameOverSound);
+
+		// Load the Player Death Sound
+		std::shared_ptr<AudioSource> playerDeathSound(new AudioSource("./Audio/sndPlayerDeath.wav", AudioType::Sound) );
+		playerDeathSound->SetName("PlayerDeathSnd");
+		_resourceList.push_front(playerDeathSound);
+
+		// Load the Start Sound
+		std::shared_ptr<AudioSource> startSound(new AudioSource("./Audio/sndStart.wav", AudioType::Sound) );
+		startSound->SetName("StartSnd");
+		_resourceList.push_front(startSound);
+
 		// Load the Rolling Music
 		std::shared_ptr<AudioSource> rollingMus(new AudioSource("./Audio/rolling_by_madgarden.ogg", AudioType::Music) );
 		rollingMus->SetName("RollingMus");
