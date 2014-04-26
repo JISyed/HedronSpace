@@ -243,6 +243,21 @@
     <ClCompile Include="GameOverScene.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerPrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyPrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyLaserPrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLaserPrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
+    <ClCompile Include="GemPrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -444,6 +459,21 @@
     </ClInclude>
     <ClInclude Include="GameOverScene.hpp">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyLaserPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLaserPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="GemPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

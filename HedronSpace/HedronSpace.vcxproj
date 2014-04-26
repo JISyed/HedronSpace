@@ -155,6 +155,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="CubePrefab.cpp" />
     <ClCompile Include="CustomComponent.cpp" />
     <ClCompile Include="DemoScene.cpp" />
+    <ClCompile Include="EnemyLaserPrefab.cpp" />
+    <ClCompile Include="EnemyPrefab.cpp" />
     <ClCompile Include="ExampleComponent.cpp" />
     <ClCompile Include="ExamplePrefab.cpp" />
     <ClCompile Include="ExampleScene.cpp" />
@@ -167,6 +169,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectContainer.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="GemPrefab.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="MaterialRegistry.cpp" />
@@ -178,6 +181,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="PhysicsEntity.cpp" />
     <ClCompile Include="PhysicsEntityContainer.cpp" />
+    <ClCompile Include="PlayerLaserPrefab.cpp" />
+    <ClCompile Include="PlayerPrefab.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="Prefabrication.cpp" />
     <ClCompile Include="PrefabricationRegistry.cpp" />
@@ -223,6 +228,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="CubePrefab.hpp" />
     <ClInclude Include="CustomComponent.hpp" />
     <ClInclude Include="DemoScene.hpp" />
+    <ClInclude Include="EnemyLaserPrefab.hpp" />
+    <ClInclude Include="EnemyPrefab.hpp" />
     <ClInclude Include="ExampleComponent.hpp" />
     <ClInclude Include="ExamplePrefab.hpp" />
     <ClInclude Include="ExampleScene.hpp" />
@@ -235,6 +242,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameObjectContainer.hpp" />
     <ClInclude Include="GameOverScene.hpp" />
+    <ClInclude Include="GemPrefab.hpp" />
     <ClInclude Include="INameable.hpp" />
     <ClInclude Include="ISystemObject.hpp" />
     <ClInclude Include="LinearAlgebraTypes.hpp" />
@@ -248,6 +256,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="PhysicsComponent.hpp" />
     <ClInclude Include="PhysicsEntity.hpp" />
     <ClInclude Include="PhysicsEntityContainer.hpp" />
+    <ClInclude Include="PlayerLaserPrefab.hpp" />
+    <ClInclude Include="PlayerPrefab.hpp" />
     <ClInclude Include="PlayScene.hpp" />
     <ClInclude Include="Prefabrication.hpp" />
     <ClInclude Include="PrefabricationRegistry.hpp" />

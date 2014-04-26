@@ -46,6 +46,12 @@ namespace sfew
 		addPrefab<prefab::OctoPrefab>();
 		addPrefab<prefab::FpsPrefab>();
 
+		addPrefab<prefab::PlayerPrefab>();
+		addPrefab<prefab::EnemyPrefab>();
+		addPrefab<prefab::EnemyLaserPrefab>();
+		addPrefab<prefab::PlayerLaserPrefab>();
+		addPrefab<prefab::GemPrefab>();
+
 		// Loading successful
 		_resourcesLoaded = true;
 		return _resourcesLoaded;
