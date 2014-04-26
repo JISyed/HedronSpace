@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B68B4AAD-DAD5-4E05-8571-A85E1B7F3B47}</ProjectGuid>
+    <RootNamespace>HedronSpace</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\glew\include;C:\glm;C:\SFML-2.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\glew\lib\Release\Win32;C:\SFML-2.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;sfml-audio-s-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PostBuildEvent>
+      <Command>ROBOCOPY "$(ProjectDir)DLLs" "$(SolutionDir)$(Configuration)" *.* /E /XX
+
+set drce=%errorlevel%
+echo Exit Code %drce%
+if %drce% geq 4 exit %drce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Shaders" "$(SolutionDir)$(Configuration)\Shaders" *.* /E /XX
+
+set srce=%errorlevel%
+echo Exit Code %srce%
+if %srce% geq 4 exit %srce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Textures" "$(SolutionDir)$(Configuration)\Textures" *.* /E /XX
+
+set trce=%errorlevel%
+echo Exit Code %trce%
+if %trce% geq 4 exit %trce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Audio" "$(SolutionDir)$(Configuration)\Audio" *.* /E /XX
+
+set arce=%errorlevel%
+echo Exit Code %arce%
+if %arce% geq 4 exit %arce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Fonts" "$(SolutionDir)$(Configuration)\Fonts" *.* /E /XX
+
+set frce=%errorlevel%
+echo Exit Code %frce%
+if %frce% geq 4 exit %frce% else exit 0</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy nessesary files to build.</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\glew\include;C:\glm;C:\SFML-2.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\glew\lib\Release\Win32;C:\SFML-2.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;sfml-audio-s.lib;sfml-system-s.lib;sfml-window-s.lib;sfml-graphics-s.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PostBuildEvent>
+      <Command>ROBOCOPY "$(ProjectDir)DLLs" "$(SolutionDir)$(Configuration)" *.* /E /XX
+
+set drce=%errorlevel%
+echo Exit Code %drce%
+if %drce% geq 4 exit %drce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Shaders" "$(SolutionDir)$(Configuration)\Shaders" *.* /E /XX
+
+set srce=%errorlevel%
+echo Exit Code %srce%
+if %srce% geq 4 exit %srce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Textures" "$(SolutionDir)$(Configuration)\Textures" *.* /E /XX
+
+set trce=%errorlevel%
+echo Exit Code %trce%
+if %trce% geq 4 exit %trce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Audio" "$(SolutionDir)$(Configuration)\Audio" *.* /E /XX
+
+set arce=%errorlevel%
+echo Exit Code %arce%
+if %arce% geq 4 exit %arce% else exit 0
+
+ROBOCOPY "$(ProjectDir)Fonts" "$(SolutionDir)$(Configuration)\Fonts" *.* /E /XX
+
+set frce=%errorlevel%
+echo Exit Code %frce%
+if %frce% geq 4 exit %frce% else exit 0</Command>
+      <Message>Copy nessesary files to build.</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AudioComponent.cpp" />
+    <ClCompile Include="AudioRegistry.cpp" />
+    <ClCompile Include="AudioSource.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="CubePrefab.cpp" />
+    <ClCompile Include="CustomComponent.cpp" />
+    <ClCompile Include="DemoScene.cpp" />
+    <ClCompile Include="ExampleComponent.cpp" />
+    <ClCompile Include="ExamplePrefab.cpp" />
+    <ClCompile Include="ExampleScene.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="FontRegistry.cpp" />
+    <ClCompile Include="FontRenderer.cpp" />
+    <ClCompile Include="FontRendererComponent.cpp" />
+    <ClCompile Include="FpsPrefab.cpp" />
+    <ClCompile Include="FPSUpdaterComponent.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectContainer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MaterialRegistry.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshRegistry.cpp" />
+    <ClCompile Include="ObjectRenderer.cpp" />
+    <ClCompile Include="ObjectRendererComponent.cpp" />
+    <ClCompile Include="OctoPrefab.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
+    <ClCompile Include="PhysicsEntity.cpp" />
+    <ClCompile Include="PhysicsEntityContainer.cpp" />
+    <ClCompile Include="Prefabrication.cpp" />
+    <ClCompile Include="PrefabricationRegistry.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Registry.cpp" />
+    <ClCompile Include="RendererContainer.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneRegistry.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderRegistry.cpp" />
+    <ClCompile Include="SystemTime.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureRegistry.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimerContainer.cpp" />
+    <ClCompile Include="Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Audio\rolling_by_madgarden.ogg" />
+    <None Include="DLLs\glew32.dll" />
+    <None Include="DLLs\libsndfile-1.dll" />
+    <None Include="DLLs\msvcp110.dll" />
+    <None Include="DLLs\msvcr110.dll" />
+    <None Include="DLLs\openal32.dll" />
+    <None Include="Shaders\basic.frag" />
+    <None Include="Shaders\basic.vert" />
+    <None Include="Shaders\brightness.frag" />
+    <None Include="Shaders\brightness.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AllCustomComponentHeaders.hpp" />
+    <ClInclude Include="AllPrefabrications.hpp" />
+    <ClInclude Include="AllScenes.hpp" />
+    <ClInclude Include="Application.hpp" />
+    <ClInclude Include="AudioComponent.hpp" />
+    <ClInclude Include="AudioRegistry.hpp" />
+    <ClInclude Include="AudioSource.hpp" />
+    <ClInclude Include="Callback.hpp" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Component.hpp" />
+    <ClInclude Include="Container.hpp" />
+    <ClInclude Include="CubePrefab.hpp" />
+    <ClInclude Include="CustomComponent.hpp" />
+    <ClInclude Include="DemoScene.hpp" />
+    <ClInclude Include="ExampleComponent.hpp" />
+    <ClInclude Include="ExamplePrefab.hpp" />
+    <ClInclude Include="ExampleScene.hpp" />
+    <ClInclude Include="Font.hpp" />
+    <ClInclude Include="FontRegistry.hpp" />
+    <ClInclude Include="FontRenderer.hpp" />
+    <ClInclude Include="FontRendererComponent.hpp" />
+    <ClInclude Include="FpsPrefab.hpp" />
+    <ClInclude Include="FPSUpdaterComponent.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="GameObjectContainer.hpp" />
+    <ClInclude Include="INameable.hpp" />
+    <ClInclude Include="ISystemObject.hpp" />
+    <ClInclude Include="LinearAlgebraTypes.hpp" />
+    <ClInclude Include="Material.hpp" />
+    <ClInclude Include="MaterialRegistry.hpp" />
+    <ClInclude Include="Mesh.hpp" />
+    <ClInclude Include="MeshRegistry.hpp" />
+    <ClInclude Include="ObjectRenderer.hpp" />
+    <ClInclude Include="ObjectRendererComponent.hpp" />
+    <ClInclude Include="OctoPrefab.hpp" />
+    <ClInclude Include="PhysicsComponent.hpp" />
+    <ClInclude Include="PhysicsEntity.hpp" />
+    <ClInclude Include="PhysicsEntityContainer.hpp" />
+    <ClInclude Include="Prefabrication.hpp" />
+    <ClInclude Include="PrefabricationRegistry.hpp" />
+    <ClInclude Include="Random.hpp" />
+    <ClInclude Include="Registry.hpp" />
+    <ClInclude Include="RendererContainer.hpp" />
+    <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="SceneRegistry.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="ShaderRegistry.hpp" />
+    <ClInclude Include="SystemTime.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="TextureRegistry.hpp" />
+    <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="TimerContainer.hpp" />
+    <ClInclude Include="Transform.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\texGameOver.png" />
+    <Image Include="Textures\texPatches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audio\sndItemGet.wav" />
+    <Media Include="Audio\sndPlayerLaser.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\Mars_1_0_0_6.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
