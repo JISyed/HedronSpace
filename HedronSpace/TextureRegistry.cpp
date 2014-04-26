@@ -55,6 +55,26 @@ namespace sfew
 		gameOverTexture->SetName("GameOver");
 		_resourceList.push_front(gameOverTexture);
 
+		// Load the Bullets Texture
+		std::shared_ptr<Texture> bulletsTexture(new Texture("./Textures/texBullets.png"));
+		bulletsTexture->SetName("Bullets");
+		_resourceList.push_front(bulletsTexture);
+
+		// Load the Gems Texture
+		std::shared_ptr<Texture> gemsTexture(new Texture("./Textures/texGems.png"));
+		gemsTexture->SetName("Gems");
+		_resourceList.push_front(gemsTexture);
+
+		// Load the Player Texture
+		std::shared_ptr<Texture> playerTexture(new Texture("./Textures/texPlayer.png"));
+		playerTexture->SetName("Player");
+		_resourceList.push_front(playerTexture);
+
+		// Load the Start Screen Texture
+		std::shared_ptr<Texture> startScreenTexture(new Texture("./Textures/texStartScreen.png"));
+		startScreenTexture->SetName("StartScreen");
+		_resourceList.push_front(startScreenTexture);
+
 		// Assumes that the resources were successfully loaded
 		_resourcesLoaded = true;
 

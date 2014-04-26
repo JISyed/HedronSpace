@@ -51,13 +51,13 @@ namespace sfew
 
 		// Load White Patches Material
 		std::shared_ptr<Material> whitePatchesMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
-																    TextureRegistry::GetByName("Patches")));
+																    TextureRegistry::GetByName("Bullets")));
 		whitePatchesMaterial->SetName("WhitePatches");
 		_resourceList.push_front(whitePatchesMaterial);
 
 		// Load Orange Patches Material
 		std::shared_ptr<Material> orangePatchesMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
-																     TextureRegistry::GetByName("Patches")));
+																     TextureRegistry::GetByName("Gems")));
 		orangePatchesMaterial->SetName("OrangePatches");
 		orangePatchesMaterial->SetColor(Vector4(1.0f, 0.5f, 0.0f, 1.0f));
 		_resourceList.push_front(orangePatchesMaterial);
