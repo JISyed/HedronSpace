@@ -68,6 +68,47 @@ namespace sfew
 		gameOverMaterial->SetName("GameOver");
 		_resourceList.push_front(gameOverMaterial);
 
+		// Load Start Screen Material
+		std::shared_ptr<Material> startScreenMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+																   TextureRegistry::GetByName("StartScreen")));
+		startScreenMaterial->SetName("StartScreen");
+		_resourceList.push_front(startScreenMaterial);
+
+		// Load Gems Material
+		std::shared_ptr<Material> gemsMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+															TextureRegistry::GetByName("Gems")));
+		gemsMaterial->SetName("Gems");
+		_resourceList.push_front(gemsMaterial);
+		gemsMaterial->SetColor(Vector4(1.0f, 0.01f, 0.5f, 1.0f));
+
+		// Load Player Material
+		std::shared_ptr<Material> playerMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+															  TextureRegistry::GetByName("Player")));
+		playerMaterial->SetName("Player");
+		_resourceList.push_front(playerMaterial);
+		playerMaterial->SetColor(Vector4(0.01f, 0.9f, 0.5f, 1.0f));
+
+		// Load Enemy Material
+		std::shared_ptr<Material> enemyMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+															 TextureRegistry::GetByName("Patches")));
+		enemyMaterial->SetName("Enemy");
+		_resourceList.push_front(enemyMaterial);
+		enemyMaterial->SetColor(Vector4(0.9f, 1.0f, 0.01f, 1.0f));
+
+		// Load Player Laser Material
+		std::shared_ptr<Material> playerLaserMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+																   TextureRegistry::GetByName("Bullets")));
+		playerLaserMaterial->SetName("PlayerLaser");
+		_resourceList.push_front(playerLaserMaterial);
+		playerLaserMaterial->SetColor(Vector4(0.05f, 1.0f, 0.6f, 1.0f));
+
+		// Load Enemy Laser Material
+		std::shared_ptr<Material> enemyLaserMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+																  TextureRegistry::GetByName("Bullets")));
+		enemyLaserMaterial->SetName("EnemyLaser");
+		_resourceList.push_front(enemyLaserMaterial);
+		enemyLaserMaterial->SetColor(Vector4(1.0f, 1.0f, 0.02f, 1.0f));
+
 		// Assumes that the resources were successfully loaded
 		_resourcesLoaded = true;
 
