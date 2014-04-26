@@ -10,5 +10,7 @@
 #include "ExampleScene.hpp"
 #include "DemoScene.hpp"
 #include "StartScene.hpp"
+#include "PlayScene.hpp"
+#include "GameOverScene.hpp"
 
 #endif

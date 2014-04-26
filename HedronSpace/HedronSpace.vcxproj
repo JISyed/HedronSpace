@@ -166,6 +166,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="FPSUpdaterComponent.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectContainer.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="MaterialRegistry.cpp" />
@@ -177,6 +178,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="PhysicsEntity.cpp" />
     <ClCompile Include="PhysicsEntityContainer.cpp" />
+    <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="Prefabrication.cpp" />
     <ClCompile Include="PrefabricationRegistry.cpp" />
     <ClCompile Include="Random.cpp" />
@@ -232,6 +234,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="FPSUpdaterComponent.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameObjectContainer.hpp" />
+    <ClInclude Include="GameOverScene.hpp" />
     <ClInclude Include="INameable.hpp" />
     <ClInclude Include="ISystemObject.hpp" />
     <ClInclude Include="LinearAlgebraTypes.hpp" />
@@ -245,6 +248,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="PhysicsComponent.hpp" />
     <ClInclude Include="PhysicsEntity.hpp" />
     <ClInclude Include="PhysicsEntityContainer.hpp" />
+    <ClInclude Include="PlayScene.hpp" />
     <ClInclude Include="Prefabrication.hpp" />
     <ClInclude Include="PrefabricationRegistry.hpp" />
     <ClInclude Include="Random.hpp" />

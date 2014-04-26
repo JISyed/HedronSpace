@@ -48,9 +48,11 @@ namespace sfew
 		addScene<scene::ExampleScene>();
 		addScene<scene::DemoScene>();
 		addScene<scene::StartScene>();
+		addScene<scene::PlayScene>();
+		addScene<scene::GameOverScene>();
 
 		// Chose one of the scenes as the first scene to load
-		SceneRegistry::LoadScene<scene::StartScene>();
+		SceneRegistry::LoadScene<scene::PlayScene>();
 
 		// Loading successful
 		_resourcesLoaded = true;
