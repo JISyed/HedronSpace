@@ -9,5 +9,6 @@
 
 #include "ExampleScene.hpp"
 #include "DemoScene.hpp"
+#include "StartScene.hpp"
 
 #endif

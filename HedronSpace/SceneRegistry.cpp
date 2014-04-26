@@ -47,9 +47,10 @@ namespace sfew
 		// Add all the scenes to the registry
 		addScene<scene::ExampleScene>();
 		addScene<scene::DemoScene>();
+		addScene<scene::StartScene>();
 
 		// Chose one of the scenes as the first scene to load
-		SceneRegistry::LoadScene<scene::DemoScene>();
+		SceneRegistry::LoadScene<scene::StartScene>();
 
 		// Loading successful
 		_resourcesLoaded = true;

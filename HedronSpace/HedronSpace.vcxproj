@@ -186,6 +186,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="SceneRegistry.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderRegistry.cpp" />
+    <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="SystemTime.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureRegistry.cpp" />
@@ -253,6 +254,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="SceneRegistry.hpp" />
     <ClInclude Include="Shader.hpp" />
     <ClInclude Include="ShaderRegistry.hpp" />
+    <ClInclude Include="StartScene.hpp" />
     <ClInclude Include="SystemTime.hpp" />
     <ClInclude Include="Texture.hpp" />
     <ClInclude Include="TextureRegistry.hpp" />
