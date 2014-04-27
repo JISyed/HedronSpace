@@ -56,6 +56,8 @@ namespace sfew
 
 			std::weak_ptr<PhysicsEntity> _physics;	// Physics properties
 			std::weak_ptr<Transform> _transform;	// Player's transform
+			float _thrustStrength;					// Linear acceleration
+			float _turnStrength;					// Angular acceleration
 
 			
 		};	// End of custom component class header
