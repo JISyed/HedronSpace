@@ -63,6 +63,9 @@ namespace sfew
 			auto transform = go._Get()->GetTransform();
 			transform._Get()->SetPosition(Vector3(0.0f, 0.0f, -1.5f));
 
+			// Add enemy controling component
+			go._Get()->AddCustomComponent<component::ControlEnemy>();
+
 			// Return weak pointer
 			return go;
 		}

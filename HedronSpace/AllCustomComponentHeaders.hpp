@@ -14,5 +14,6 @@
 #include "ManageStartScreen.hpp"
 #include "ControlCamera.hpp"
 #include "BulletLifetime.hpp"
+#include "ControlEnemy.hpp"
 
 #endif
