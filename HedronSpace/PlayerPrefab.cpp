@@ -47,6 +47,7 @@ namespace sfew
 			// Add components
 			go._Get()->AddComponent<ObjectRendererComponent>();
 			go._Get()->AddComponent<PhysicsComponent>();
+			go._Get()->AddCustomComponent<component::ControlPlayer>();
 
 			// Setup renderer
 			auto renderer = go._Get()->GetComponent<ObjectRendererComponent>()._Get()->GetRenderer();
@@ -55,7 +56,8 @@ namespace sfew
 
 			// Setup physics
 			auto physics = go._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
-			physics._Get()->SetRotationalVelocity(Vector3(0.0f, 50.0f, 0.0f));
+			physics._Get()->SetLinearDrag(1.0f);
+			//physics._Get()->SetRotationalVelocity(Vector3(0.0f, 50.0f, 0.0f));
 
 			// Setup transform
 			auto transform = go._Get()->GetTransform();

@@ -9,4 +9,6 @@
 #include "FPSUpdaterComponent.hpp"
 #include "ExampleComponent.hpp"
 
+#include "ControlPlayer.hpp"
+
 #endif

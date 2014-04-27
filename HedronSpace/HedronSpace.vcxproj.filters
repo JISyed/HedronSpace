@@ -252,6 +252,9 @@
     <ClCompile Include="GridCubePrefab.cpp">
       <Filter>Source Files\Prefabrications</Filter>
     </ClCompile>
+    <ClCompile Include="ControlPlayer.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -462,6 +465,9 @@
     </ClInclude>
     <ClInclude Include="GridCubePrefab.hpp">
       <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlPlayer.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
