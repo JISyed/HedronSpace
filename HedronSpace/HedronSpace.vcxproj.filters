@@ -255,6 +255,15 @@
     <ClCompile Include="ControlPlayer.cpp">
       <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
+    <ClCompile Include="ManageGameOver.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ManageStartScreen.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCamera.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -467,6 +476,15 @@
       <Filter>Header Files\Prefabrications</Filter>
     </ClInclude>
     <ClInclude Include="ControlPlayer.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageGameOver.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageStartScreen.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCamera.hpp">
       <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
   </ItemGroup>

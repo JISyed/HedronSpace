@@ -10,5 +10,8 @@
 #include "ExampleComponent.hpp"
 
 #include "ControlPlayer.hpp"
+#include "ManageGameOver.hpp"
+#include "ManageStartScreen.hpp"
+#include "ControlCamera.hpp"
 
 #endif

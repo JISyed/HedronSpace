@@ -152,6 +152,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="ControlCamera.cpp" />
     <ClCompile Include="ControlPlayer.cpp" />
     <ClCompile Include="CustomComponent.cpp" />
     <ClCompile Include="EnemyLaserPrefab.cpp" />
@@ -171,6 +172,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="GemPrefab.cpp" />
     <ClCompile Include="GridCubePrefab.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManageGameOver.cpp" />
+    <ClCompile Include="ManageStartScreen.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="MaterialRegistry.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -224,6 +227,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="Container.hpp" />
+    <ClInclude Include="ControlCamera.hpp" />
     <ClInclude Include="ControlPlayer.hpp" />
     <ClInclude Include="CustomComponent.hpp" />
     <ClInclude Include="EnemyLaserPrefab.hpp" />
@@ -245,6 +249,8 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="INameable.hpp" />
     <ClInclude Include="ISystemObject.hpp" />
     <ClInclude Include="LinearAlgebraTypes.hpp" />
+    <ClInclude Include="ManageGameOver.hpp" />
+    <ClInclude Include="ManageStartScreen.hpp" />
     <ClInclude Include="Material.hpp" />
     <ClInclude Include="MaterialRegistry.hpp" />
     <ClInclude Include="Mesh.hpp" />

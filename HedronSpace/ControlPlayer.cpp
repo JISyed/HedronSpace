@@ -35,8 +35,8 @@ namespace sfew
 			// MAKE SURE that Physics component was added first!
 			_physics = GetGameObject()._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
 			_transform = GetGameObject()._Get()->GetTransform();
-			_thrustStrength = 6.0f;
-			_turnStrength = 120.0f;
+			_thrustStrength = 10.0f;
+			_turnStrength = 200.0f;
 		}
 
 		// Runs every frame

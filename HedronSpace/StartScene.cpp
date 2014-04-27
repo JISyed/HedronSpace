@@ -71,6 +71,10 @@ namespace sfew
 			theCamera._Get()->SetPosition(Vector3(0.0f, 0.0f, 1.0f));
 			theCamera._Get()->LookAtPoint(Vector3(0.0f, 0.0f, 0.0f));
 
+			// Add the functionality for the Game Over screen
+			auto startScreenCtrlr = GameObjectContainer::Create();
+			startScreenCtrlr._Get()->AddCustomComponent<component::ManageStartScreen>();
+
 			return true;
 		}
 
