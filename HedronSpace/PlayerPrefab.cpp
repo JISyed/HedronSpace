@@ -57,6 +57,7 @@ namespace sfew
 			// Setup physics
 			auto physics = go._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
 			physics._Get()->SetLinearDrag(1.0f);
+			physics._Get()->SetAngularDrag(1.0f);
 			//physics._Get()->SetRotationalVelocity(Vector3(0.0f, 50.0f, 0.0f));
 
 			// Setup transform

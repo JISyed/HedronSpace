@@ -67,7 +67,8 @@ namespace sfew
 
 			// Example objects
 			auto playerPrefab = PrefabricationRegistry::Get<prefab::PlayerPrefab>();
-			playerPrefab._Get()->MakeObject();
+			auto playerObj = playerPrefab._Get()->MakeObject();
+			playerObj._Get()->GetTransform()._Get()->Rotate(Vector3(0.0f, 34.0f, 0.0f));
 
 			auto gemPrefab = PrefabricationRegistry::Get<prefab::GemPrefab>();
 			gemPrefab._Get()->MakeObject();

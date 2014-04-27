@@ -43,11 +43,20 @@ namespace sfew
 			Vector3 forward = _transform._Get()->Forward();
 
 			// Thrust forward
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) &&
+				!sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
 				_physics._Get()->SetAcceleration( forward * 3.0f );
 			}
-			else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			// Thrust backward
+			else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) &&
+				!sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			{
+				_physics._Get()->SetAcceleration( forward * -3.0f );
+			}
+			// Stop thrusting if not pressing either key
+			else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) &&
+				!sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
 				_physics._Get()->SetAcceleration( Vector3(0.0f, 0.0f, 0.0f) );
 			}
