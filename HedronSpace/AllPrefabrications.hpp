@@ -8,8 +8,6 @@
 #define SFEW_ALL_PREFABRICATION_HEADERS_H
 
 #include "ExamplePrefab.hpp"
-#include "CubePrefab.hpp"
-#include "OctoPrefab.hpp"
 #include "FpsPrefab.hpp"
 
 #include "PlayerPrefab.hpp"

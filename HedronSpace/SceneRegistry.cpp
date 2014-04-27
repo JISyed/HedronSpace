@@ -46,7 +46,6 @@ namespace sfew
 	{
 		// Add all the scenes to the registry
 		addScene<scene::ExampleScene>();
-		addScene<scene::DemoScene>();
 		addScene<scene::StartScene>();
 		addScene<scene::PlayScene>();
 		addScene<scene::GameOverScene>();

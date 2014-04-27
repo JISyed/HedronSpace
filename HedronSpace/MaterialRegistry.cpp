@@ -49,18 +49,12 @@ namespace sfew
 		blankMaterial->SetName("Blank");
 		_resourceList.push_front(blankMaterial);
 
-		// Load White Patches Material
-		std::shared_ptr<Material> whitePatchesMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
-																    TextureRegistry::GetByName("Bullets")));
-		whitePatchesMaterial->SetName("WhitePatches");
-		_resourceList.push_front(whitePatchesMaterial);
-
-		// Load Orange Patches Material
-		std::shared_ptr<Material> orangePatchesMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
-																     TextureRegistry::GetByName("Gems")));
-		orangePatchesMaterial->SetName("OrangePatches");
-		orangePatchesMaterial->SetColor(Vector4(1.0f, 0.5f, 0.0f, 1.0f));
-		_resourceList.push_front(orangePatchesMaterial);
+		// Load a cubeGrid texture
+		std::shared_ptr<Material> cubeGridMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),
+															 TextureRegistry::GetByName("Blank")));
+		cubeGridMaterial->SetName("CubeGrid");
+		_resourceList.push_front(cubeGridMaterial);
+		cubeGridMaterial->SetColor(Vector4(0.0f, 0.9f, 1.0f, 1.0f));
 
 		// Load Game Over Material
 		std::shared_ptr<Material> gameOverMaterial(new Material(ShaderRegistry::GetByName("BasicShader"),

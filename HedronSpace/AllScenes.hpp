@@ -8,7 +8,6 @@
 #define SFEW_ALL_SCENE_HEADERS_H
 
 #include "ExampleScene.hpp"
-#include "DemoScene.hpp"
 #include "StartScene.hpp"
 #include "PlayScene.hpp"
 #include "GameOverScene.hpp"

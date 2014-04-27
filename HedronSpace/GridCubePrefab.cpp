@@ -50,7 +50,7 @@ namespace sfew
 			// Setup renderer
 			auto renderer = go._Get()->GetComponent<ObjectRendererComponent>()._Get()->GetRenderer();
 			renderer._Get()->SetMesh(MeshRegistry::GetByName("CubeMesh"));
-			renderer._Get()->SetMaterial(MaterialRegistry::GetByName("Blank"));
+			renderer._Get()->SetMaterial(MaterialRegistry::GetByName("CubeGrid"));
 
 			// Setup transform
 			auto transform = go._Get()->GetTransform();

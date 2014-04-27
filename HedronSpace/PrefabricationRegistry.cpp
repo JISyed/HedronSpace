@@ -42,8 +42,6 @@ namespace sfew
 	{
 		// Load all the custom prefabs here
 		addPrefab<prefab::ExamplePrefab>();
-		addPrefab<prefab::CubePrefab>();
-		addPrefab<prefab::OctoPrefab>();
 		addPrefab<prefab::FpsPrefab>();
 
 		addPrefab<prefab::PlayerPrefab>();
