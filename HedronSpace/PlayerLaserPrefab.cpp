@@ -56,6 +56,7 @@ namespace sfew
 
 			// Setup physics
 			auto physics = go._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
+			physics._Get()->SetCollisionGroup(PhysicsCollisionGroups::GroupB);
 			physics._Get()->SetRadius(0.1f);	// 0.2 (scale) X 0.5 (mesh width)
 
 			// Setup transform

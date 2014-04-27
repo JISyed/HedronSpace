@@ -21,11 +21,11 @@ namespace sfew
 	// Define the types of objects that belong in these groups.
 	enum PhysicsCollisionGroups
 	{
-		GroupA,		// Define the type of object that belong in this group
-		GroupB,		// Define the type of object that belong in this group
-		GroupC,		// Define the type of object that belong in this group
-		GroupD,		// Define the type of object that belong in this group
-		GroupE,		// Define the type of object that belong in this group
+		GroupA,		// Player
+		GroupB,		// Player Bullet
+		GroupC,		// Enemy
+		GroupD,		// Enemy Bullet
+		GroupE,		// Gems
 		GroupF,		// Define the type of object that belong in this group
 		GroupG,		// Define the type of object that belong in this group
 		GroupH		// Define the type of object that belong in this group
