@@ -13,5 +13,6 @@
 #include "ManageGameOver.hpp"
 #include "ManageStartScreen.hpp"
 #include "ControlCamera.hpp"
+#include "BulletLifetime.hpp"
 
 #endif

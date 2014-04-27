@@ -149,6 +149,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="AudioComponent.cpp" />
     <ClCompile Include="AudioRegistry.cpp" />
     <ClCompile Include="AudioSource.cpp" />
+    <ClCompile Include="BulletLifetime.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Container.cpp" />
@@ -223,6 +224,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="AudioComponent.hpp" />
     <ClInclude Include="AudioRegistry.hpp" />
     <ClInclude Include="AudioSource.hpp" />
+    <ClInclude Include="BulletLifetime.hpp" />
     <ClInclude Include="Callback.hpp" />
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="Component.hpp" />
