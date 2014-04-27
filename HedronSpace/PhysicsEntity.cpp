@@ -19,7 +19,7 @@ namespace sfew
 
 	// Ctor
 	PhysicsEntity::PhysicsEntity(std::weak_ptr<GameObject> gameObject) :
-		_radius(1.0f),
+		_radius(0.5f),
 		_velocity(0.0f, 0.0f, 0.0f),
 		_acceleration(0.0f, 0.0f, 0.0f),
 		_rotationalVelocity(0.0f, 0.0f, 0.0f),
