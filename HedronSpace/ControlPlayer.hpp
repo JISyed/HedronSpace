@@ -58,7 +58,7 @@ namespace sfew
 			std::weak_ptr<Transform> _transform;	// Player's transform
 			float _thrustStrength;					// Linear acceleration
 			float _turnStrength;					// Angular acceleration
-
+			bool _spacePressedLastFrame;			// Was Space pressed last frame
 			
 		};	// End of custom component class header
 

@@ -7,6 +7,7 @@
 
 // SFEW Headers not needed in header
 #include "Random.hpp"
+#include "PrefabricationRegistry.hpp"
 
 namespace sfew
 {
@@ -35,6 +36,7 @@ namespace sfew
 			// MAKE SURE that Physics component was added first!
 			_physics = GetGameObject()._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
 			_transform = GetGameObject()._Get()->GetTransform();
+			_spacePressedLastFrame = false;
 			_thrustStrength = 10.0f;
 			_turnStrength = 200.0f;
 		}
@@ -81,6 +83,30 @@ namespace sfew
 			{
 				_physics._Get()->SetRotationalAcceleration( Vector3(0.0f, 0.0f, 0.0f) );
 			}
+
+			// Check if the spacebar was pressed at the moment
+			// Then fire a bullet
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !_spacePressedLastFrame)
+			{
+				auto bulletPrefab = PrefabricationRegistry::Get<prefab::PlayerLaserPrefab>();
+				if(!bulletPrefab.expired())
+				{
+					auto bullet = bulletPrefab._Get()->MakeObject();
+					auto bulletTransform = bullet._Get()->GetTransform();
+					bulletTransform._Get()->SetPosition(
+						GetGameObject()._Get()->GetTransform()._Get()->GetPosition()
+					);
+					bulletTransform._Get()->SetEulerAngles(
+						GetGameObject()._Get()->GetTransform()._Get()->GetEulerAngles()
+					);
+					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
+						Vector3(bullet._Get()->GetTransform()._Get()->Forward() * 20.0f)
+					);
+				}
+			}
+
+			// Keep record of spacebar's state for next frame (This should be last!)
+			_spacePressedLastFrame = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
 		}
 
 		// Runs at destruction of component
