@@ -38,7 +38,7 @@ namespace sfew
 
 			// Helpers ========================
 
-			
+			void createCubeGrid(int gridSize);
 			
 			// Data ===========================
 

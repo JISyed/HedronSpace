@@ -59,15 +59,29 @@ namespace sfew
 
 			// Setup the camera
 			auto theCamera = Camera::GetInstance();
-			float camStart = 1.4f;
+			float camStart = 6.4f;
 			theCamera._Get()->SetPosition(
 				sfew::Vector3(camStart, camStart, camStart)
 			);
 			theCamera._Get()->LookAtPoint(sfew::Vector3(0.0f, 0.0f, 0.0f));
 
-			// Example cube
-			auto cubePrefab = PrefabricationRegistry::Get<prefab::CubePrefab>();
-			cubePrefab._Get()->MakeObject();
+			// Example objects
+			auto playerPrefab = PrefabricationRegistry::Get<prefab::PlayerPrefab>();
+			playerPrefab._Get()->MakeObject();
+
+			auto gemPrefab = PrefabricationRegistry::Get<prefab::GemPrefab>();
+			gemPrefab._Get()->MakeObject();
+
+			auto enemyPrefab = PrefabricationRegistry::Get<prefab::EnemyPrefab>();
+			enemyPrefab._Get()->MakeObject();
+
+			auto playerLaserPrefab = PrefabricationRegistry::Get<prefab::PlayerLaserPrefab>();
+			playerLaserPrefab._Get()->MakeObject();
+
+			auto enemyLaserPrefab = PrefabricationRegistry::Get<prefab::EnemyLaserPrefab>();
+			enemyLaserPrefab._Get()->MakeObject();
+
+			createCubeGrid(5);
 
 			return true;
 		}
@@ -76,6 +90,25 @@ namespace sfew
 
 		// Helpers =========================================
 
+		void PlayScene::createCubeGrid(int gridSize)
+		{
+			auto gridCubePrefab = PrefabricationRegistry::Get<prefab::GridCubePrefab>();
+			auto prefabPointer = gridCubePrefab._Get();
+
+			int gridHeight = gridSize;
+			int gridWidth = gridSize;
+
+			for (int i = 0; i < gridWidth; i++)
+			{
+				for (int j = 0; j < gridHeight; j++)
+				{
+					auto go = prefabPointer->MakeObject();
+					go._Get()->GetTransform()._Get()->SetPosition(
+						Vector3((float) i, 0, (float) j)
+					);
+				}
+			}
+		}
 
 	} // namespace sfew::scene
 } // namespace sfew

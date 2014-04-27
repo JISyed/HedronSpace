@@ -51,6 +51,7 @@ namespace sfew
 		addPrefab<prefab::EnemyLaserPrefab>();
 		addPrefab<prefab::PlayerLaserPrefab>();
 		addPrefab<prefab::GemPrefab>();
+		addPrefab<prefab::GridCubePrefab>();
 
 		// Loading successful
 		_resourcesLoaded = true;

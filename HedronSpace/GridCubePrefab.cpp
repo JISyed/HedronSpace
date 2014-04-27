@@ -1,4 +1,4 @@
-#include "PlayerPrefab.hpp"
+#include "GridCubePrefab.hpp"
 #include "GameObjectContainer.hpp"
 #include "MaterialRegistry.hpp"
 #include "MeshRegistry.hpp"
@@ -23,43 +23,39 @@ namespace sfew
 		// Ctor/Dtor ========================================
 
 		// Constructor
-		PlayerPrefab::PlayerPrefab()
+		GridCubePrefab::GridCubePrefab()
 		{
 			
 		}
 
 		// Destructor
-		PlayerPrefab::~PlayerPrefab()
+		GridCubePrefab::~GridCubePrefab()
 		{
 			
 		}
 
 		// Routines =========================================
 
-		std::weak_ptr<GameObject> PlayerPrefab::MakeObject()
+		std::weak_ptr<GameObject> GridCubePrefab::MakeObject()
 		{
 			// Create GameObject and name it
 			std::weak_ptr<GameObject> go = GameObjectContainer::Create();
-			go._Get()->SetName("Player");
+			go._Get()->SetName("GridCube");
 
 			// Setup other properties here
 
 			// Add components
 			go._Get()->AddComponent<ObjectRendererComponent>();
-			go._Get()->AddComponent<PhysicsComponent>();
 
 			// Setup renderer
 			auto renderer = go._Get()->GetComponent<ObjectRendererComponent>()._Get()->GetRenderer();
-			renderer._Get()->SetMesh(MeshRegistry::GetByName("TetrahedronMesh"));
-			renderer._Get()->SetMaterial(MaterialRegistry::GetByName("Player"));
-
-			// Setup physics
-			auto physics = go._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
-			physics._Get()->SetRotationalVelocity(Vector3(0.0f, 50.0f, 0.0f));
+			renderer._Get()->SetMesh(MeshRegistry::GetByName("CubeMesh"));
+			renderer._Get()->SetMaterial(MaterialRegistry::GetByName("Blank"));
 
 			// Setup transform
 			auto transform = go._Get()->GetTransform();
-			transform._Get()->SetPosition(Vector3(-1.0f, 0.0f, -1.0f));
+			transform._Get()->SetPosition(Vector3(0.0f, 0.0f, 0.0f));
+			transform._Get()->SetScale(Vector3(0.02f, 0.02f, 0.02f));
 
 			// Return weak pointer
 			return go;

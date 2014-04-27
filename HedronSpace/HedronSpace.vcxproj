@@ -170,6 +170,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="GameObjectContainer.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="GemPrefab.cpp" />
+    <ClCompile Include="GridCubePrefab.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="MaterialRegistry.cpp" />
@@ -243,6 +244,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="GameObjectContainer.hpp" />
     <ClInclude Include="GameOverScene.hpp" />
     <ClInclude Include="GemPrefab.hpp" />
+    <ClInclude Include="GridCubePrefab.hpp" />
     <ClInclude Include="INameable.hpp" />
     <ClInclude Include="ISystemObject.hpp" />
     <ClInclude Include="LinearAlgebraTypes.hpp" />

@@ -258,6 +258,9 @@
     <ClCompile Include="GemPrefab.cpp">
       <Filter>Source Files\Prefabrications</Filter>
     </ClCompile>
+    <ClCompile Include="GridCubePrefab.cpp">
+      <Filter>Source Files\Prefabrications</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -473,6 +476,9 @@
       <Filter>Header Files\Prefabrications</Filter>
     </ClInclude>
     <ClInclude Include="GemPrefab.hpp">
+      <Filter>Header Files\Prefabrications</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCubePrefab.hpp">
       <Filter>Header Files\Prefabrications</Filter>
     </ClInclude>
   </ItemGroup>

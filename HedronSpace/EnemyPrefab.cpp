@@ -44,6 +44,22 @@ namespace sfew
 
 			// Setup other properties here
 			
+			// Add components
+			go._Get()->AddComponent<ObjectRendererComponent>();
+			go._Get()->AddComponent<PhysicsComponent>();
+
+			// Setup renderer
+			auto renderer = go._Get()->GetComponent<ObjectRendererComponent>()._Get()->GetRenderer();
+			renderer._Get()->SetMesh(MeshRegistry::GetByName("PrismMesh"));
+			renderer._Get()->SetMaterial(MaterialRegistry::GetByName("Enemy"));
+
+			// Setup physics
+			auto physics = go._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
+			physics._Get()->SetRotationalVelocity(Vector3(0.0f, 50.0f, 0.0f));
+
+			// Setup transform
+			auto transform = go._Get()->GetTransform();
+			transform._Get()->SetPosition(Vector3(0.0f, 0.0f, -1.5f));
 
 			// Return weak pointer
 			return go;

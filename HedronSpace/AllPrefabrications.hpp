@@ -17,5 +17,6 @@
 #include "EnemyLaserPrefab.hpp"
 #include "PlayerLaserPrefab.hpp"
 #include "GemPrefab.hpp"
+#include "GridCubePrefab.hpp"
 
 #endif

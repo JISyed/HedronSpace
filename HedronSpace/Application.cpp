@@ -246,7 +246,7 @@ namespace sfew
 		_window = std::shared_ptr<sf::RenderWindow>(
 			new sf::RenderWindow(
 				sf::VideoMode(800, 600), 
-				"SF3DEW Test", 
+				"HedronSpace", 
 				sf::Style::Close | sf::Style::Titlebar
 			)
 		);
