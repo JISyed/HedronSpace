@@ -51,7 +51,7 @@ namespace sfew
 		addScene<scene::GameOverScene>();
 
 		// Chose one of the scenes as the first scene to load
-		SceneRegistry::LoadScene<scene::PlayScene>();
+		SceneRegistry::LoadScene<scene::StartScene>();
 
 		// Loading successful
 		_resourcesLoaded = true;
