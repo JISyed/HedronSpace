@@ -15,6 +15,7 @@
 // SFEW Headers
 #include "FontRenderer.hpp"
 #include "ControlPlayer.hpp"
+#include "ScoreKeeper.hpp"
 
 namespace sfew
 {
@@ -59,6 +60,7 @@ namespace sfew
 			std::weak_ptr<GameObject> _playerGameObject;
 			std::weak_ptr<ControlPlayer> _playerComponent;
 			std::stringstream hudOut;	// String stream to output to HUD
+			std::weak_ptr<ScoreKeeper> _scoreKeeper;
 
 		};	// End of custom component class header
 

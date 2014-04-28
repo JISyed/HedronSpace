@@ -37,6 +37,10 @@ namespace sfew
 			// Get the player data
 			retrievePlayer();
 
+			// Retrieve the score keeper
+			auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+			_scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+
 			// Get the font renderer
 			_fontRendering = GetGameObject()._Get()->GetComponent<FontRendererComponent>()._Get()->GetRenderer();
 		}
@@ -50,10 +54,14 @@ namespace sfew
 			{
 				healthData = _playerComponent._Get()->GetHealth();
 			}
+			int scoreData = _scoreKeeper._Get()->GetScore();
+			int gemData = _scoreKeeper._Get()->GetGemsCollected();
 
 			// Get current FPS and update font renderer string
 			hudOut.str(std::string());
-			hudOut << "Health: " << healthData;
+			hudOut << "Health: " << healthData << std::endl 
+				<< "Score: " << scoreData << std::endl
+				<< "Gems: " << gemData << std::endl;
 			_fontRendering._Get()->SetTextString(hudOut.str());
 		}
 
