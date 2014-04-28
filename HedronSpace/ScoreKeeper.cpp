@@ -34,6 +34,7 @@ namespace sfew
 		{
 			_score = 0;
 			_gems = 0;
+			_level = 1;
 		}
 
 		// Runs every frame
@@ -69,6 +70,11 @@ namespace sfew
 			return _gems;
 		}
 
+		int ScoreKeeper::GetLevel() const
+		{
+			return _level;
+		}
+
 		void ScoreKeeper::AddGems(int additionalGems)
 		{
 			_gems += additionalGems;
@@ -79,6 +85,10 @@ namespace sfew
 			_score += additionalScore;
 		}
 
+		void ScoreKeeper::IncrementLevel()
+		{
+			_level++;
+		}
 
 		// Private Routines =========================================
 

@@ -53,12 +53,21 @@ namespace sfew
 
 			// Private Routines ========================
 
-			
+			void respawnAllEnemies();
+			void respawnAllGems();
+			void respawnSomeEnemiesIfGemsCleared();
+			void spawnOneEnemy();
+			void spawnOneGem();
 
 			// Data ===========================
 
 			int _gemCount;
 			int _enemyCount;
+			int _spawnedGems;
+			int _spawnedEnemies;
+			int _maxGems;
+			int _maxEnemies;
+			float _fieldSize;
 			
 		};	// End of custom component class header
 

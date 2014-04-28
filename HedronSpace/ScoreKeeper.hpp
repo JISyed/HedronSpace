@@ -46,8 +46,10 @@ namespace sfew
 
 			int GetScore() const;
 			int GetGemsCollected() const;
+			int GetLevel() const;
 			void AddGems(int additionalGems);
 			void AddScore(int additionalScore);
+			void IncrementLevel();
 
 		private:
 
@@ -59,6 +61,7 @@ namespace sfew
 
 			int _score;
 			int _gems;
+			int _level;
 			
 		};	// End of custom component class header
 

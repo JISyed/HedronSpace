@@ -43,11 +43,13 @@ namespace sfew
 			auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
 			int finalScore = scoreKeeper._Get()->GetScore();
 			int finalGems = scoreKeeper._Get()->GetGemsCollected();
+			int finalLevel = scoreKeeper._Get()->GetLevel();
 
 			// Write final results
 			hudOut.str(std::string());
 			hudOut << "Score: " << finalScore << std::endl
-				<< "Gems: " << finalGems;
+				<< "Gems: " << finalGems << std::endl
+				<< "Level: " << finalLevel;
 			_fontRenderer._Get()->SetTextString(hudOut.str());
 		}
 
