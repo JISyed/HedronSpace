@@ -5,6 +5,11 @@ Game that makes use of my personal wrapper for SFML (called SF3DEW).  You can re
 
 The object of the game is to collect as many pink gems as possible. You will have to deal with spinning hedrons that shoot bullets in random directions. Hitting a hedron with your bullets will make it shoot back at you. Collect all the gems to proceed to the next level, where there will be more gems and more hedrons. You can only take 10 hits.
 
+Download
+--------
+
+Download the latest version [here](https://github.com/JISyed/HedronSpace/releases/latest)!
+
 Credits
 -------
 
