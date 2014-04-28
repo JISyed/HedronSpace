@@ -64,7 +64,12 @@ namespace sfew
 		void ControlGem::OnCollision(PhysicsCollisionGroups otherGroup, 
 										 std::weak_ptr<PhysicsEntity> otherEntity)
 		{
-			
+			// Check if collision is with the player
+			if(otherGroup == PhysicsCollisionGroups::GroupA)
+			{
+				// Delete self no matter what
+				this->GetGameObject()._Get()->Destroy();
+			}
 		}
 
 		// Custom Routines =========================================

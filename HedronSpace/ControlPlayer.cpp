@@ -38,7 +38,7 @@ namespace sfew
 			_transform = GetGameObject()._Get()->GetTransform();
 			_spacePressedLastFrame = false;
 			_thrustStrength = 20.0f;
-			_turnStrength = 200.0f;
+			_turnStrength = 300.0f;
 		}
 
 		// Runs every frame
