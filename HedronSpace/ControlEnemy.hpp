@@ -16,6 +16,7 @@
 #include "Timer.hpp"
 #include "Prefabrication.hpp"
 #include "ControlGame.hpp"
+#include "AudioSource.hpp"
 
 namespace sfew
 {
@@ -60,7 +61,9 @@ namespace sfew
 			float _shootInterval;		// In seconds
 			std::weak_ptr<ControlGame> _gameCtrlr;
 			int _health;
-			
+			std::weak_ptr<AudioSource> _laserSnd;
+			std::weak_ptr<AudioSource> _deathSnd;
+
 		};	// End of custom component class header
 
 	} // namespace sfew::component

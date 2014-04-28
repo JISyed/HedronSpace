@@ -14,6 +14,7 @@
 
 // SFEW Headers
 #include "PhysicsEntity.hpp"
+#include "AudioSource.hpp"
 
 namespace sfew
 {
@@ -60,6 +61,8 @@ namespace sfew
 			float _turnStrength;					// Angular acceleration
 			bool _spacePressedLastFrame;			// Was Space pressed last frame
 			int _health;							// Player's health
+			std::weak_ptr<AudioSource> _laserSnd;
+			std::weak_ptr<AudioSource> _deathSnd;
 
 		};	// End of custom component class header
 

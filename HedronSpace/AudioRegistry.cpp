@@ -75,6 +75,11 @@ namespace sfew
 		startSound->SetName("StartSnd");
 		_resourceList.push_front(startSound);
 
+		// Load the Level Up Sound
+		std::shared_ptr<AudioSource> levelUpSound(new AudioSource("./Audio/sndLevelUp.wav", AudioType::Sound) );
+		levelUpSound->SetName("LevelUp");
+		_resourceList.push_front(levelUpSound);
+
 		// Load the Rolling Music
 		std::shared_ptr<AudioSource> rollingMus(new AudioSource("./Audio/rolling_by_madgarden.ogg", AudioType::Music) );
 		rollingMus->SetName("RollingMus");

@@ -13,7 +13,7 @@
 
 
 // SFEW Headers
-
+#include "AudioSource.hpp"
 
 namespace sfew
 {
@@ -54,7 +54,7 @@ namespace sfew
 
 			// Data ===========================
 
-
+			std::weak_ptr<AudioSource> _gameOverSnd;
 			
 		};	// End of custom component class header
 

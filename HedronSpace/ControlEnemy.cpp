@@ -10,6 +10,7 @@
 #include "TimerContainer.hpp"
 #include "PrefabricationRegistry.hpp"
 #include "GameObjectContainer.hpp"
+#include "AudioRegistry.hpp"
 
 namespace sfew
 {
@@ -43,6 +44,9 @@ namespace sfew
 
 				// Increment Enemy count
 				_gameCtrlr._Get()->IncrementEnemy();
+
+				_laserSnd = AudioRegistry::GetByName("EnemyLaserSnd");
+				_deathSnd = AudioRegistry::GetByName("EnemyDeathSnd");
 			}
 
 			// Make a timer for shooting bullets every time interval in seconds
@@ -61,6 +65,7 @@ namespace sfew
 					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
 						Vector3(bullet._Get()->GetTransform()._Get()->Forward() * 8.5f)
 					);
+					_laserSnd._Get()->Play();
 				}
 			);
 			_shootTimer._Get()->SetLooping(true);
@@ -121,6 +126,7 @@ namespace sfew
 					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
 						Vector3(playerDirection * 7.0f)
 					);
+					_laserSnd._Get()->Play();
 				}
 
 				// Check if health ran out
@@ -133,6 +139,8 @@ namespace sfew
 
 					// Delete self
 					this->GetGameObject()._Get()->Destroy();
+
+					_deathSnd._Get()->Play();
 				}
 			}
 		}

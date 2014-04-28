@@ -14,6 +14,7 @@
 
 // SFEW Headers
 #include "ControlGame.hpp"
+#include "AudioSource.hpp"
 
 namespace sfew
 {
@@ -55,6 +56,7 @@ namespace sfew
 			// Data ===========================
 
 			std::weak_ptr<ControlGame> _gameCtrlr;
+			std::weak_ptr<AudioSource> _collectSound;
 			
 		};	// End of custom component class header
 

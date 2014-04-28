@@ -10,6 +10,7 @@
 #include "Random.hpp"
 #include "PrefabricationRegistry.hpp"
 #include "GameObjectContainer.hpp"
+#include "AudioRegistry.hpp"
 
 namespace sfew
 {
@@ -42,6 +43,8 @@ namespace sfew
 			_thrustStrength = 20.0f;
 			_turnStrength = 300.0f;
 			_health = 10;
+			_laserSnd = AudioRegistry::GetByName("PlayerLaserSnd");
+			_deathSnd = AudioRegistry::GetByName("PlayerDeathSnd");
 		}
 
 		// Runs every frame
@@ -102,6 +105,7 @@ namespace sfew
 				bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
 					Vector3(bullet._Get()->GetTransform()._Get()->Forward() * 20.0f)
 				);
+				_laserSnd._Get()->Play();
 
 				// This was to fix a bug where a giant bullet appeared at the origin
 				bullet._Get()->Update();
@@ -134,6 +138,8 @@ namespace sfew
 				auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
 				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
 				scoreKeeper._Get()->AddScore(1);
+
+				_deathSnd._Get()->Play();
 			}
 		}
 

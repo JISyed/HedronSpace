@@ -8,6 +8,7 @@
 // SFEW Headers not needed in header
 #include "Random.hpp"
 #include "GameObjectContainer.hpp"
+#include "AudioRegistry.hpp"
 
 namespace sfew
 {
@@ -41,6 +42,8 @@ namespace sfew
 
 				// Increment Gem count
 				_gameCtrlr._Get()->IncrementGem();
+
+				_collectSound = AudioRegistry::GetByName("ItemGetSnd");
 			}
 		}
 
@@ -75,6 +78,8 @@ namespace sfew
 				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
 				scoreKeeper._Get()->AddGems(1);
 				scoreKeeper._Get()->AddScore(12);
+
+				_collectSound._Get()->Play();
 			}
 		}
 

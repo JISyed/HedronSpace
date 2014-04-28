@@ -8,6 +8,7 @@
 // SFEW Headers not needed in header
 #include "Random.hpp"
 #include "SceneRegistry.hpp"
+#include "AudioRegistry.hpp"
 
 namespace sfew
 {
@@ -33,7 +34,8 @@ namespace sfew
 		// Runs at contruction of component
 		void ManageGameOver::Start()
 		{
-			
+			_gameOverSnd = AudioRegistry::GetByName("GameOverSnd");
+			_gameOverSnd._Get()->Play();
 		}
 
 		// Runs every frame

@@ -9,6 +9,7 @@
 #include "Random.hpp"
 #include "PrefabricationRegistry.hpp"
 #include "GameObjectContainer.hpp"
+#include "AudioRegistry.hpp"
 
 namespace sfew
 {
@@ -40,7 +41,14 @@ namespace sfew
 			_spawnedGems = 3;
 			_spawnedEnemies = 3;
 			_maxGems = 20;
-			_maxEnemies = 18;
+			_maxEnemies = 10;
+
+			_startSound = AudioRegistry::GetByName("StartSnd");
+			_levelUpSound = AudioRegistry::GetByName("LevelUp");
+			_gameMusic = AudioRegistry::GetByName("RollingMus");
+
+			_startSound._Get()->Play();
+			//_gameMusic._Get()->Play();
 		}
 
 		// Runs every frame
@@ -132,6 +140,7 @@ namespace sfew
 			auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
 			auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
 			scoreKeeper._Get()->IncrementLevel();
+			_levelUpSound._Get()->Play();
 
 			// Make more enemies
 			respawnSomeEnemiesIfGemsCleared();

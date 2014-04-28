@@ -13,7 +13,7 @@
 
 
 // SFEW Headers
-
+#include "AudioSource.hpp"
 
 namespace sfew
 {
@@ -69,6 +69,9 @@ namespace sfew
 			int _maxGems;
 			int _maxEnemies;
 			float _fieldSize;
+			std::weak_ptr<AudioSource> _startSound;
+			std::weak_ptr<AudioSource> _levelUpSound;
+			std::weak_ptr<AudioSource> _gameMusic;
 			
 		};	// End of custom component class header
 
