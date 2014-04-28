@@ -57,18 +57,15 @@ namespace sfew
 		{
 			// Load the desired GameObjects here
 
-			// Setup the camera
-			auto theCamera = Camera::GetInstance();
-			float camStart = 6.4f;
-			theCamera._Get()->SetPosition(
-				sfew::Vector3(camStart, camStart, camStart)
-			);
-			theCamera._Get()->LookAtPoint(sfew::Vector3(0.0f, 0.0f, 0.0f));
+			// Create the Game Controller
+			auto gameCtrlr = GameObjectContainer::Create();
+			gameCtrlr._Get()->SetName("GameCtrlr");
+			gameCtrlr._Get()->AddCustomComponent<component::ControlGame>();
 
 			// Create the Player
 			auto playerPrefab = PrefabricationRegistry::Get<prefab::PlayerPrefab>();
 			auto playerObj = playerPrefab._Get()->MakeObject();
-			playerObj._Get()->GetTransform()._Get()->Rotate(Vector3(0.0f, 34.0f, 0.0f));
+			playerObj._Get()->GetTransform()._Get()->Rotate(Vector3(0.0f, 45.0f, 0.0f));
 
 			// Create test objects
 			auto gemPrefab = PrefabricationRegistry::Get<prefab::GemPrefab>();

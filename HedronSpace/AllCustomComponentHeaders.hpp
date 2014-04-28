@@ -15,5 +15,6 @@
 #include "ControlCamera.hpp"
 #include "BulletLifetime.hpp"
 #include "ControlEnemy.hpp"
+#include "ControlGame.hpp"
 
 #endif
