@@ -53,7 +53,10 @@ namespace sfew
 		// Runs at destruction of component
 		void BulletLifetime::Cleanup()
 		{
-			_lifeTimer._Get()->Destroy();
+			if(!_lifeTimer.expired())
+			{
+				_lifeTimer._Get()->Destroy();
+			}
 		}
 
 		// Run if there is a collision with an object of a different group

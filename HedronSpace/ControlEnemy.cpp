@@ -91,7 +91,10 @@ namespace sfew
 			}
 
 			// Mark timer for deletion
-			_shootTimer._Get()->Destroy();
+			if(!_shootTimer.expired())
+			{
+				_shootTimer._Get()->Destroy();
+			}
 		}
 
 		// Run if there is a collision with an object of a different group
