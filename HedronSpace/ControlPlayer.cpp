@@ -92,20 +92,19 @@ namespace sfew
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !_spacePressedLastFrame)
 			{
 				auto bulletPrefab = PrefabricationRegistry::Get<prefab::PlayerLaserPrefab>();
-				if(!bulletPrefab.expired())
-				{
-					auto bullet = bulletPrefab._Get()->MakeObject();
-					auto bulletTransform = bullet._Get()->GetTransform();
-					bulletTransform._Get()->SetPosition(
-						GetGameObject()._Get()->GetTransform()._Get()->GetPosition()
-					);
-					bulletTransform._Get()->SetEulerAngles(
-						GetGameObject()._Get()->GetTransform()._Get()->GetEulerAngles()
-					);
-					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
-						Vector3(bullet._Get()->GetTransform()._Get()->Forward() * 20.0f)
-					);
-				}
+				auto bullet = bulletPrefab._Get()->MakeObject();
+				bullet._Get()->GetTransform()._Get()->SetPosition(
+					GetGameObject()._Get()->GetTransform()._Get()->GetPosition()
+				);
+				bullet._Get()->GetTransform()._Get()->SetEulerAngles(
+					GetGameObject()._Get()->GetTransform()._Get()->GetEulerAngles()
+				);
+				bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
+					Vector3(bullet._Get()->GetTransform()._Get()->Forward() * 20.0f)
+				);
+
+				// This was to fix a bug where a giant bullet appeared at the origin
+				bullet._Get()->Update();
 			}
 
 			// Keep record of spacebar's state for next frame (This should be last!)
