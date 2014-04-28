@@ -159,6 +159,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="ControlGem.cpp" />
     <ClCompile Include="ControlPlayer.cpp" />
     <ClCompile Include="CustomComponent.cpp" />
+    <ClCompile Include="DrawHUD.cpp" />
     <ClCompile Include="EnemyLaserPrefab.cpp" />
     <ClCompile Include="EnemyPrefab.cpp" />
     <ClCompile Include="ExampleComponent.cpp" />
@@ -197,6 +198,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="RendererContainer.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneRegistry.cpp" />
+    <ClCompile Include="ScoreKeeper.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderRegistry.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -238,6 +240,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="ControlGem.hpp" />
     <ClInclude Include="ControlPlayer.hpp" />
     <ClInclude Include="CustomComponent.hpp" />
+    <ClInclude Include="DrawHUD.hpp" />
     <ClInclude Include="EnemyLaserPrefab.hpp" />
     <ClInclude Include="EnemyPrefab.hpp" />
     <ClInclude Include="ExampleComponent.hpp" />
@@ -278,6 +281,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="RendererContainer.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="SceneRegistry.hpp" />
+    <ClInclude Include="ScoreKeeper.hpp" />
     <ClInclude Include="Shader.hpp" />
     <ClInclude Include="ShaderRegistry.hpp" />
     <ClInclude Include="StartScene.hpp" />

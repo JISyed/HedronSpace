@@ -57,6 +57,12 @@ namespace sfew
 		{
 			// Load the desired GameObjects here
 
+			// Make persistant score keeper (must be set un-persistant at Game Over)
+			auto scoreKeeper = GameObjectContainer::Create();
+			scoreKeeper._Get()->SetName("ScoreKeeper");
+			scoreKeeper._Get()->SetPersistance(true);
+			scoreKeeper._Get()->AddCustomComponent<component::ScoreKeeper>();
+
 			// Create the Game Controller (Nessesary for game logic!)
 			auto gameCtrlr = GameObjectContainer::Create();
 			gameCtrlr._Get()->SetName("GameCtrlr");
@@ -89,6 +95,12 @@ namespace sfew
 			auto cameraCtrlr = GameObjectContainer::Create();
 			cameraCtrlr._Get()->SetName("CameraCtrlr");
 			cameraCtrlr._Get()->AddCustomComponent<component::ControlCamera>();
+
+			// Make HUD (Player must exist!)
+			auto hudObject = GameObjectContainer::Create();
+			hudObject._Get()->SetName("HUD");
+			hudObject._Get()->AddComponent<FontRendererComponent>();
+			hudObject._Get()->AddCustomComponent<component::DrawHUD>();
 
 			// Create a grid of tiny cubes for depth perception
 			createCubeGrid(125);

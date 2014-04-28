@@ -17,5 +17,7 @@
 #include "ControlEnemy.hpp"
 #include "ControlGame.hpp"
 #include "ControlGem.hpp"
+#include "ScoreKeeper.hpp"
+#include "DrawHUD.hpp"
 
 #endif

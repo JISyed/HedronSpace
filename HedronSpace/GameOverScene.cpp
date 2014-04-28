@@ -58,6 +58,13 @@ namespace sfew
 		{
 			// Load the desired GameObjects here
 
+			// Find persistant ScoreKeeper and make un-persistant
+			auto scoreKeeper = GameObjectContainer::GetByName("ScoreKeeper");
+			if(!scoreKeeper.expired())
+			{
+				scoreKeeper._Get()->SetPersistance(false);
+			}
+
 			// Make a cube GameObject
 			auto cube = GameObjectContainer::Create();
 			cube._Get()->AddComponent<ObjectRendererComponent>();
