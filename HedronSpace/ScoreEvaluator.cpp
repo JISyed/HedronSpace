@@ -47,9 +47,9 @@ namespace sfew
 
 			// Write final results
 			hudOut.str(std::string());
-			hudOut << "Score: " << finalScore << std::endl
-				<< "Gems: " << finalGems << std::endl
-				<< "Level: " << finalLevel;
+			hudOut << "Score: " << finalScore
+				<< "            Gems: " << finalGems
+				<< "            Level: " << finalLevel;
 			_fontRenderer._Get()->SetTextString(hudOut.str());
 		}
 

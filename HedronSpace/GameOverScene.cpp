@@ -84,6 +84,8 @@ namespace sfew
 
 			auto scoreEvaluator = GameObjectContainer::Create();
 			scoreEvaluator._Get()->AddCustomComponent<component::ScoreEvaluator>();
+			auto scoreFontRenderer = scoreEvaluator._Get()->GetComponent<FontRendererComponent>()._Get()->GetRenderer();
+			scoreFontRenderer._Get()->SetPosition(190, 487);
 
 			return true;
 		}
