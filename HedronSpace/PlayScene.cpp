@@ -75,7 +75,12 @@ namespace sfew
 			gemPrefab._Get()->MakeObject();
 
 			auto enemyPrefab = PrefabricationRegistry::Get<prefab::EnemyPrefab>();
-			enemyPrefab._Get()->MakeObject();
+			auto e1 = enemyPrefab._Get()->MakeObject();
+			e1._Get()->GetTransform()._Get()->SetPosition(Vector3(30.0f, 0.0f, 20.0f));
+			auto e2 = enemyPrefab._Get()->MakeObject();
+			e2._Get()->GetTransform()._Get()->SetPosition(Vector3(60.0f, 0.0f, 10.0f));
+			auto e3 = enemyPrefab._Get()->MakeObject();
+			e3._Get()->GetTransform()._Get()->SetPosition(Vector3(20.0f, 0.0f, 30.0f));
 
 			// Create the object that controls the camera (Player must exist!)
 			auto cameraCtrlr = GameObjectContainer::Create();
@@ -83,7 +88,7 @@ namespace sfew
 			cameraCtrlr._Get()->AddCustomComponent<component::ControlCamera>();
 
 			// Create a grid of tiny cubes for depth perception
-			createCubeGrid(75);
+			createCubeGrid(125);
 
 			return true;
 		}
@@ -99,7 +104,7 @@ namespace sfew
 
 			int gridHeight = gridSize;
 			int gridWidth = gridSize;
-			int gridUnit = 8;
+			int gridUnit = 15;
 
 			for (int i = 0; i < gridWidth; i+=gridUnit)
 			{

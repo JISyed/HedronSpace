@@ -13,7 +13,8 @@
 
 
 // SFEW Headers
-
+#include "Timer.hpp"
+#include "Prefabrication.hpp"
 
 namespace sfew
 {
@@ -54,7 +55,8 @@ namespace sfew
 
 			// Data ===========================
 
-
+			std::weak_ptr<Timer> _shootTimer;
+			float _shootInterval;		// In seconds
 			
 		};	// End of custom component class header
 

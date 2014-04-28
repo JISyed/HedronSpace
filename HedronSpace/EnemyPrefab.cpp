@@ -61,7 +61,7 @@ namespace sfew
 
 			// Setup transform
 			auto transform = go._Get()->GetTransform();
-			transform._Get()->SetPosition(Vector3(0.0f, 0.0f, -1.5f));
+			transform._Get()->SetPosition(Vector3(0.0f, 0.0f, 0.0f));
 
 			// Add enemy controling component
 			go._Get()->AddCustomComponent<component::ControlEnemy>();

@@ -37,7 +37,7 @@ namespace sfew
 			_physics = GetGameObject()._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity();
 			_transform = GetGameObject()._Get()->GetTransform();
 			_spacePressedLastFrame = false;
-			_thrustStrength = 10.0f;
+			_thrustStrength = 20.0f;
 			_turnStrength = 200.0f;
 		}
 

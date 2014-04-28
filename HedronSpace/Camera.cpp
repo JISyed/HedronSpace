@@ -19,7 +19,7 @@ namespace sfew
 		_fov(75.0f),
 		_aspectRatio(0.75f),
 		_nearClip(0.5f),
-		_farClip(50.0f),
+		_farClip(200.0f),
 		_flaggedAsViewChanged(true),
 		_flaggedAsProjectionChanged(true)
 	{
