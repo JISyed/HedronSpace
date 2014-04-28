@@ -59,6 +59,7 @@ namespace sfew
 			std::weak_ptr<Timer> _shootTimer;
 			float _shootInterval;		// In seconds
 			std::weak_ptr<ControlGame> _gameCtrlr;
+			int _health;
 			
 		};	// End of custom component class header
 

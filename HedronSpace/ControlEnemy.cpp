@@ -64,6 +64,9 @@ namespace sfew
 				}
 			);
 			_shootTimer._Get()->SetLooping(true);
+
+			// Set health
+			_health = 3;
 		}
 
 		// Runs every frame
@@ -89,7 +92,29 @@ namespace sfew
 		void ControlEnemy::OnCollision(PhysicsCollisionGroups otherGroup, 
 										 std::weak_ptr<PhysicsEntity> otherEntity)
 		{
-			
+			// Check if collision was with a player bullet
+			if(otherGroup == PhysicsCollisionGroups::GroupB)
+			{
+				// Delete the bullet no matter what
+				otherEntity._Get()->GetGameObject()._Get()->Destroy();
+
+				// Shoot a bullet to counter the player (if player exists)
+				auto playerGameObject = GameObjectContainer::GetByName("Player");
+				if(!playerGameObject.expired())
+				{
+					Vector3 playerPos = playerGameObject._Get()->GetTransform()._Get()->GetPosition();
+					auto bulletPrefab = PrefabricationRegistry::Get<sfew::prefab::EnemyLaserPrefab>();
+					auto bullet = bulletPrefab._Get()->MakeObject();
+					bullet._Get()->GetTransform()._Get()->SetPosition(
+						this->GetGameObject()._Get()->GetTransform()._Get()->GetPosition()
+					);
+					Vector3 playerDirection = playerPos - bullet._Get()->GetTransform()._Get()->GetPosition();
+					playerDirection = glm::normalize(playerDirection);
+					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
+						Vector3(playerDirection * 7.0f)
+					);
+				}
+			}
 		}
 
 		// Custom Routines =========================================

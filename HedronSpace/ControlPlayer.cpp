@@ -119,7 +119,12 @@ namespace sfew
 		void ControlPlayer::OnCollision(PhysicsCollisionGroups otherGroup, 
 										 std::weak_ptr<PhysicsEntity> otherEntity)
 		{
-			
+			// Check if collision was with a enemy bullet
+			if(otherGroup == PhysicsCollisionGroups::GroupD)
+			{
+				// Delete the bullet no matter what
+				otherEntity._Get()->GetGameObject()._Get()->Destroy();
+			}
 		}
 
 		// Custom Routines =========================================
