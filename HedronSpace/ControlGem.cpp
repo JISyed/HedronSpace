@@ -69,6 +69,12 @@ namespace sfew
 			{
 				// Delete self no matter what
 				this->GetGameObject()._Get()->Destroy();
+
+				// Add the gem to the score keeper
+				auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+				scoreKeeper._Get()->AddGems(1);
+				scoreKeeper._Get()->AddScore(12);
 			}
 		}
 

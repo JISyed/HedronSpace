@@ -98,6 +98,14 @@ namespace sfew
 				// Delete the bullet no matter what
 				otherEntity._Get()->GetGameObject()._Get()->Destroy();
 
+				// Decrement health
+				_health--;
+
+				// Add points for hitting enemy
+				auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+				scoreKeeper._Get()->AddScore(5);
+
 				// Shoot a bullet to counter the player (if player exists)
 				auto playerGameObject = GameObjectContainer::GetByName("Player");
 				if(!playerGameObject.expired())
@@ -113,6 +121,18 @@ namespace sfew
 					bullet._Get()->GetComponent<PhysicsComponent>()._Get()->GetPhysicsEntity()._Get()->SetVelocity(
 						Vector3(playerDirection * 7.0f)
 					);
+				}
+
+				// Check if health ran out
+				if(_health < 0)
+				{
+					// Add points for killing enemy
+					auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+					auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+					scoreKeeper._Get()->AddScore(75);
+
+					// Delete self
+					this->GetGameObject()._Get()->Destroy();
 				}
 			}
 		}

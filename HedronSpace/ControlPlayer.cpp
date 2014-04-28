@@ -9,6 +9,7 @@
 // SFEW Headers not needed in header
 #include "Random.hpp"
 #include "PrefabricationRegistry.hpp"
+#include "GameObjectContainer.hpp"
 
 namespace sfew
 {
@@ -126,6 +127,11 @@ namespace sfew
 			{
 				// Delete the bullet no matter what
 				otherEntity._Get()->GetGameObject()._Get()->Destroy();
+
+				// Add 1 point for being hit by enemy bullets
+				auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+				scoreKeeper._Get()->AddScore(1);
 			}
 		}
 
