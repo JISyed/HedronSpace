@@ -63,6 +63,7 @@ namespace sfew
 			int _health;
 			std::weak_ptr<AudioSource> _laserSnd;
 			std::weak_ptr<AudioSource> _deathSnd;
+			std::weak_ptr<AudioSource> _hitSnd;
 
 		};	// End of custom component class header
 

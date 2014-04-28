@@ -47,6 +47,7 @@ namespace sfew
 
 				_laserSnd = AudioRegistry::GetByName("EnemyLaserSnd");
 				_deathSnd = AudioRegistry::GetByName("EnemyDeathSnd");
+				_hitSnd = AudioRegistry::GetByName("EnemyHit");
 			}
 
 			// Make a timer for shooting bullets every time interval in seconds
@@ -141,6 +142,10 @@ namespace sfew
 					this->GetGameObject()._Get()->Destroy();
 
 					_deathSnd._Get()->Play();
+				}
+				else
+				{
+					_hitSnd._Get()->Play();
 				}
 			}
 		}

@@ -80,6 +80,11 @@ namespace sfew
 		levelUpSound->SetName("LevelUp");
 		_resourceList.push_front(levelUpSound);
 
+		// Load the Enemy Hit Sound
+		std::shared_ptr<AudioSource> enemyHitSound(new AudioSource("./Audio/sndEnemyHit.wav", AudioType::Sound) );
+		enemyHitSound->SetName("EnemyHit");
+		_resourceList.push_front(enemyHitSound);
+
 		// Load the Rolling Music
 		std::shared_ptr<AudioSource> rollingMus(new AudioSource("./Audio/rolling_by_madgarden.ogg", AudioType::Music) );
 		rollingMus->SetName("RollingMus");

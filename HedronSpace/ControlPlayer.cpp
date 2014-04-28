@@ -11,6 +11,7 @@
 #include "PrefabricationRegistry.hpp"
 #include "GameObjectContainer.hpp"
 #include "AudioRegistry.hpp"
+#include "SceneRegistry.hpp"
 
 namespace sfew
 {
@@ -140,6 +141,12 @@ namespace sfew
 				scoreKeeper._Get()->AddScore(1);
 
 				_deathSnd._Get()->Play();
+			}
+
+			// Check if player is out of health
+			if(_health < 1)
+			{
+				SceneRegistry::LoadScene<scene::GameOverScene>();
 			}
 		}
 

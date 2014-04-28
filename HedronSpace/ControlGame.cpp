@@ -48,7 +48,8 @@ namespace sfew
 			_gameMusic = AudioRegistry::GetByName("RollingMus");
 
 			_startSound._Get()->Play();
-			//_gameMusic._Get()->Play();
+			_gameMusic._Get()->SetVolume(40.0f);
+			_gameMusic._Get()->Play();
 		}
 
 		// Runs every frame
