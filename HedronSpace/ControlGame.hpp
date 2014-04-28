@@ -48,6 +48,7 @@ namespace sfew
 			void DecrementGem();
 			void IncrementEnemy();
 			void DecrementEnemy();
+			void SetFieldSize(float newSize);
 
 		private:
 

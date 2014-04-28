@@ -8,6 +8,7 @@
 // SFEW Headers not needed in header
 #include "Random.hpp"
 #include "PrefabricationRegistry.hpp"
+#include "GameObjectContainer.hpp"
 
 namespace sfew
 {
@@ -33,7 +34,7 @@ namespace sfew
 		// Runs at contruction of component
 		void ControlGame::Start()
 		{
-			_fieldSize = 110.0f;
+			_fieldSize = 80.0f;
 			_gemCount = 0;
 			_enemyCount = 0;
 			_spawnedGems = 3;
@@ -95,6 +96,10 @@ namespace sfew
 			_enemyCount--;
 		}
 
+		void ControlGame::SetFieldSize(float newSize)
+		{
+			_fieldSize = newSize;
+		}
 
 		// Private Routines =========================================
 
@@ -122,6 +127,11 @@ namespace sfew
 			{
 				spawnOneGem();
 			}
+
+			// Increment level
+			auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
+			auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();
+			scoreKeeper._Get()->IncrementLevel();
 
 			// Make more enemies
 			respawnSomeEnemiesIfGemsCleared();

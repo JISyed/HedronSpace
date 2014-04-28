@@ -56,10 +56,12 @@ namespace sfew
 			}
 			int scoreData = _scoreKeeper._Get()->GetScore();
 			int gemData = _scoreKeeper._Get()->GetGemsCollected();
+			int levelData = _scoreKeeper._Get()->GetLevel();
 
 			// Get current FPS and update font renderer string
 			hudOut.str(std::string());
-			hudOut << "Health: " << healthData << std::endl 
+			hudOut << "Level: " << levelData << std::endl
+				<< "Health: " << healthData << std::endl 
 				<< "Score: " << scoreData << std::endl
 				<< "Gems: " << gemData;
 			_fontRendering._Get()->SetTextString(hudOut.str());
