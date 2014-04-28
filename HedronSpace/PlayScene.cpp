@@ -57,7 +57,7 @@ namespace sfew
 		{
 			// Load the desired GameObjects here
 
-			// Create the Game Controller
+			// Create the Game Controller (Nessesary for game logic!)
 			auto gameCtrlr = GameObjectContainer::Create();
 			gameCtrlr._Get()->SetName("GameCtrlr");
 			gameCtrlr._Get()->AddCustomComponent<component::ControlGame>();
@@ -67,10 +67,16 @@ namespace sfew
 			auto playerObj = playerPrefab._Get()->MakeObject();
 			playerObj._Get()->GetTransform()._Get()->Rotate(Vector3(0.0f, 45.0f, 0.0f));
 
-			// Create test objects
+			// Create Gems
 			auto gemPrefab = PrefabricationRegistry::Get<prefab::GemPrefab>();
-			gemPrefab._Get()->MakeObject();
+			auto g1 = gemPrefab._Get()->MakeObject();
+			g1._Get()->GetTransform()._Get()->SetPosition(Vector3(50.0f, 0.0f, 50.0f));
+			auto g2 = gemPrefab._Get()->MakeObject();
+			g2._Get()->GetTransform()._Get()->SetPosition(Vector3(20.0f, 0.0f, 70.0f));
+			auto g3 = gemPrefab._Get()->MakeObject();
+			g3._Get()->GetTransform()._Get()->SetPosition(Vector3(4.0f, 0.0f, 8.0f));
 
+			// Create Enemies
 			auto enemyPrefab = PrefabricationRegistry::Get<prefab::EnemyPrefab>();
 			auto e1 = enemyPrefab._Get()->MakeObject();
 			e1._Get()->GetTransform()._Get()->SetPosition(Vector3(30.0f, 0.0f, 20.0f));

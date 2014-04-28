@@ -9,6 +9,7 @@
 #include "Random.hpp"
 #include "TimerContainer.hpp"
 #include "PrefabricationRegistry.hpp"
+#include "GameObjectContainer.hpp"
 
 namespace sfew
 {
@@ -34,6 +35,16 @@ namespace sfew
 		// Runs at contruction of component
 		void ControlEnemy::Start()
 		{
+			// Find game controller
+			auto gameCtrlrObj = GameObjectContainer::GetByName("GameCtrlr");
+			if(!gameCtrlrObj.expired())
+			{
+				_gameCtrlr = gameCtrlrObj._Get()->GetCustomComponent<ControlGame>();
+
+				// Increment Enemy count
+				_gameCtrlr._Get()->IncrementEnemy();
+			}
+
 			// Make a timer for shooting bullets every time interval in seconds
 			_shootInterval = 1.2f;
 			_shootTimer = TimerContainer::Create(
@@ -64,6 +75,13 @@ namespace sfew
 		// Runs at destruction of component
 		void ControlEnemy::Cleanup()
 		{
+			// Decrement Enemy count
+			if(!_gameCtrlr.expired())
+			{
+				_gameCtrlr._Get()->DecrementEnemy();
+			}
+
+			// Mark timer for deletion
 			_shootTimer._Get()->Destroy();
 		}
 

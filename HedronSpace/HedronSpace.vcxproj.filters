@@ -273,6 +273,9 @@
     <ClCompile Include="ControlGame.cpp">
       <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
+    <ClCompile Include="ControlGem.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -503,6 +506,9 @@
       <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
     <ClInclude Include="ControlGame.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlGem.hpp">
       <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
   </ItemGroup>

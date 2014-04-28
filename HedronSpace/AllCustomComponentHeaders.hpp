@@ -16,5 +16,6 @@
 #include "BulletLifetime.hpp"
 #include "ControlEnemy.hpp"
 #include "ControlGame.hpp"
+#include "ControlGem.hpp"
 
 #endif

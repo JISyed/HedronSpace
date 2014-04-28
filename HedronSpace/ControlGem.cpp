@@ -1,4 +1,4 @@
-#include "ControlGame.hpp"
+#include "ControlGem.hpp"
 #include <iostream>
 #include "GameObject.hpp"
 
@@ -7,6 +7,7 @@
 
 // SFEW Headers not needed in header
 #include "Random.hpp"
+#include "GameObjectContainer.hpp"
 
 namespace sfew
 {
@@ -15,14 +16,14 @@ namespace sfew
 		// Ctor/Dtor ========================================
 
 		// Constructor
-		ControlGame::ControlGame(std::weak_ptr<GameObject> owningGameObject) :
+		ControlGem::ControlGem(std::weak_ptr<GameObject> owningGameObject) :
 			CustomComponent(owningGameObject)
 		{
 			Start();
 		}
 
 		// Destructor
-		ControlGame::~ControlGame()
+		ControlGem::~ControlGem()
 		{
 			Cleanup();
 		}
@@ -30,26 +31,37 @@ namespace sfew
 		// Required Routines =========================================
 
 		// Runs at contruction of component
-		void ControlGame::Start()
+		void ControlGem::Start()
 		{
-			_gemCount = 0;
-			_enemyCount = 0;
+			// Find game controller
+			auto gameCtrlrObj = GameObjectContainer::GetByName("GameCtrlr");
+			if(!gameCtrlrObj.expired())
+			{
+				_gameCtrlr = gameCtrlrObj._Get()->GetCustomComponent<ControlGame>();
+
+				// Increment Gem count
+				_gameCtrlr._Get()->IncrementGem();
+			}
 		}
 
 		// Runs every frame
-		void ControlGame::Update()
+		void ControlGem::Update()
 		{
 			
 		}
 
 		// Runs at destruction of component
-		void ControlGame::Cleanup()
+		void ControlGem::Cleanup()
 		{
-
+			// Decrement Gem count
+			if(!_gameCtrlr.expired())
+			{
+				_gameCtrlr._Get()->DecrementGem();
+			}
 		}
 
 		// Run if there is a collision with an object of a different group
-		void ControlGame::OnCollision(PhysicsCollisionGroups otherGroup, 
+		void ControlGem::OnCollision(PhysicsCollisionGroups otherGroup, 
 										 std::weak_ptr<PhysicsEntity> otherEntity)
 		{
 			
@@ -58,27 +70,6 @@ namespace sfew
 		// Custom Routines =========================================
 
 		// Properties =========================================
-
-		void ControlGame::IncrementGem()
-		{
-			_gemCount++;
-		}
-
-		void ControlGame::DecrementGem()
-		{
-			_gemCount--;
-		}
-
-		void ControlGame::IncrementEnemy()
-		{
-			_enemyCount++;
-		}
-
-		void ControlGame::DecrementEnemy()
-		{
-			_enemyCount--;
-		}
-
 
 		// Private Routines =========================================
 

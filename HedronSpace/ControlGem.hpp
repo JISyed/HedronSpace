@@ -1,11 +1,11 @@
-// Control Game Component
-// Counts the Gems and Enemies and respawns objects
+// Control Gem Component
+// Increments and decrements Gem count in ControlGame component
 //
 // Written by [NAME] ([MONTH]-[DAY]-[YEAR])
 
 // Required Headers
-#ifndef SFEW_CUSTOM_COMPONENT__CONTROL_GAME
-#define SFEW_CUSTOM_COMPONENT__CONTROL_GAME
+#ifndef SFEW_CUSTOM_COMPONENT__CONTROL_GEM
+#define SFEW_CUSTOM_COMPONENT__CONTROL_GEM
 #include "CustomComponent.hpp"
 #include <memory>
 
@@ -13,20 +13,20 @@
 
 
 // SFEW Headers
-
+#include "ControlGame.hpp"
 
 namespace sfew
 {
 	namespace component
 	{
-		class ControlGame : public CustomComponent
+		class ControlGem : public CustomComponent
 		{
 		public:
 
 			// Ctor/Dtor ======================
 
-			ControlGame(std::weak_ptr<GameObject> owningGameObject);
-			virtual ~ControlGame();
+			ControlGem(std::weak_ptr<GameObject> owningGameObject);
+			virtual ~ControlGem();
 
 			// Required Routines ==============
 
@@ -40,14 +40,11 @@ namespace sfew
 
 			// Custom Routines ================
 
-			
+
 
 			// Properties =====================
 
-			void IncrementGem();
-			void DecrementGem();
-			void IncrementEnemy();
-			void DecrementEnemy();
+			
 
 		private:
 
@@ -57,8 +54,7 @@ namespace sfew
 
 			// Data ===========================
 
-			int _gemCount;
-			int _enemyCount;
+			std::weak_ptr<ControlGame> _gameCtrlr;
 			
 		};	// End of custom component class header
 

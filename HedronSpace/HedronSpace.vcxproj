@@ -156,6 +156,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClCompile Include="ControlCamera.cpp" />
     <ClCompile Include="ControlEnemy.cpp" />
     <ClCompile Include="ControlGame.cpp" />
+    <ClCompile Include="ControlGem.cpp" />
     <ClCompile Include="ControlPlayer.cpp" />
     <ClCompile Include="CustomComponent.cpp" />
     <ClCompile Include="EnemyLaserPrefab.cpp" />
@@ -234,6 +235,7 @@ if %frce% geq 4 exit %frce% else exit 0</Command>
     <ClInclude Include="ControlCamera.hpp" />
     <ClInclude Include="ControlEnemy.hpp" />
     <ClInclude Include="ControlGame.hpp" />
+    <ClInclude Include="ControlGem.hpp" />
     <ClInclude Include="ControlPlayer.hpp" />
     <ClInclude Include="CustomComponent.hpp" />
     <ClInclude Include="EnemyLaserPrefab.hpp" />
