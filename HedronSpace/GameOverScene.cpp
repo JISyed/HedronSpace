@@ -82,6 +82,9 @@ namespace sfew
 			auto gameOverCtrlr = GameObjectContainer::Create();
 			gameOverCtrlr._Get()->AddCustomComponent<component::ManageGameOver>();
 
+			auto scoreEvaluator = GameObjectContainer::Create();
+			scoreEvaluator._Get()->AddCustomComponent<component::ScoreEvaluator>();
+
 			return true;
 		}
 

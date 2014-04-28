@@ -127,6 +127,9 @@ namespace sfew
 				// Delete the bullet no matter what
 				otherEntity._Get()->GetGameObject()._Get()->Destroy();
 
+				// Decrement player health
+				_health--;
+
 				// Add 1 point for being hit by enemy bullets
 				auto scoreKeeperObj = GameObjectContainer::GetByName("ScoreKeeper");
 				auto scoreKeeper = scoreKeeperObj._Get()->GetCustomComponent<component::ScoreKeeper>();

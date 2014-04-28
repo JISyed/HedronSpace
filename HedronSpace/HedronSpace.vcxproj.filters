@@ -282,6 +282,9 @@
     <ClCompile Include="DrawHUD.cpp">
       <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
+    <ClCompile Include="ScoreEvaluator.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\basic.frag">
@@ -521,6 +524,9 @@
       <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
     <ClInclude Include="DrawHUD.hpp">
+      <Filter>Header Files\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreEvaluator.hpp">
       <Filter>Header Files\CustomComponents</Filter>
     </ClInclude>
   </ItemGroup>

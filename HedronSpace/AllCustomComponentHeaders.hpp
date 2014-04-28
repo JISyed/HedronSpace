@@ -19,5 +19,6 @@
 #include "ControlGem.hpp"
 #include "ScoreKeeper.hpp"
 #include "DrawHUD.hpp"
+#include "ScoreEvaluator.hpp"
 
 #endif

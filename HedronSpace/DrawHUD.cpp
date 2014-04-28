@@ -61,7 +61,7 @@ namespace sfew
 			hudOut.str(std::string());
 			hudOut << "Health: " << healthData << std::endl 
 				<< "Score: " << scoreData << std::endl
-				<< "Gems: " << gemData << std::endl;
+				<< "Gems: " << gemData;
 			_fontRendering._Get()->SetTextString(hudOut.str());
 		}
 
