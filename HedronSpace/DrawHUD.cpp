@@ -8,6 +8,7 @@
 // SFEW Headers not needed in header
 #include "Random.hpp"
 #include "FontRendererComponent.hpp"
+#include "GameObjectContainer.hpp"
 
 namespace sfew
 {
@@ -33,6 +34,9 @@ namespace sfew
 		// Runs at contruction of component
 		void DrawHUD::Start()
 		{
+			// Get the player data
+			retrievePlayer();
+
 			// Get the font renderer
 			_fontRendering = GetGameObject()._Get()->GetComponent<FontRendererComponent>()._Get()->GetRenderer();
 		}
@@ -40,7 +44,17 @@ namespace sfew
 		// Runs every frame
 		void DrawHUD::Update()
 		{
-			
+			// Get latest HUD data
+			int healthData = 0;
+			if(!_playerComponent.expired())
+			{
+				healthData = _playerComponent._Get()->GetHealth();
+			}
+
+			// Get current FPS and update font renderer string
+			hudOut.str(std::string());
+			hudOut << "Health: " << healthData;
+			_fontRendering._Get()->SetTextString(hudOut.str());
 		}
 
 		// Runs at destruction of component
@@ -61,6 +75,16 @@ namespace sfew
 		// Properties =========================================
 
 		// Private Routines =========================================
+
+		// Get player and it's transform as weak pointers
+		void DrawHUD::retrievePlayer()
+		{
+			_playerGameObject = GameObjectContainer::GetByName("Player");
+			if(!_playerGameObject.expired())
+			{
+				_playerComponent = _playerGameObject._Get()->GetCustomComponent<component::ControlPlayer>();
+			}
+		}
 
 	} // namespace sfew::component
 } // namespace sfew

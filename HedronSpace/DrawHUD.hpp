@@ -10,10 +10,11 @@
 #include <memory>
 
 // System Headers
-
+#include <sstream>
 
 // SFEW Headers
 #include "FontRenderer.hpp"
+#include "ControlPlayer.hpp"
 
 namespace sfew
 {
@@ -50,12 +51,15 @@ namespace sfew
 
 			// Private Routines ========================
 
-			
+			void retrievePlayer();
 
 			// Data ===========================
 
 			std::weak_ptr<FontRenderer> _fontRendering;
-			
+			std::weak_ptr<GameObject> _playerGameObject;
+			std::weak_ptr<ControlPlayer> _playerComponent;
+			std::stringstream hudOut;	// String stream to output to HUD
+
 		};	// End of custom component class header
 
 	} // namespace sfew::component

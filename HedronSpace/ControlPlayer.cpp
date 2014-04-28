@@ -4,6 +4,7 @@
 
 // System Headers not needed in header
 #include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 
 // SFEW Headers not needed in header
 #include "Random.hpp"
@@ -39,6 +40,7 @@ namespace sfew
 			_spacePressedLastFrame = false;
 			_thrustStrength = 20.0f;
 			_turnStrength = 300.0f;
+			_health = 10;
 		}
 
 		// Runs every frame
@@ -130,6 +132,11 @@ namespace sfew
 		// Custom Routines =========================================
 
 		// Properties =========================================
+
+		int ControlPlayer::GetHealth() const
+		{
+			return _health;
+		}
 
 		// Private Routines =========================================
 

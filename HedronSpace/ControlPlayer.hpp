@@ -44,7 +44,7 @@ namespace sfew
 
 			// Properties =====================
 
-			
+			int GetHealth() const;
 
 		private:
 
@@ -59,7 +59,8 @@ namespace sfew
 			float _thrustStrength;					// Linear acceleration
 			float _turnStrength;					// Angular acceleration
 			bool _spacePressedLastFrame;			// Was Space pressed last frame
-			
+			int _health;							// Player's health
+
 		};	// End of custom component class header
 
 	} // namespace sfew::component

@@ -101,6 +101,9 @@ namespace sfew
 			hudObject._Get()->SetName("HUD");
 			hudObject._Get()->AddComponent<FontRendererComponent>();
 			hudObject._Get()->AddCustomComponent<component::DrawHUD>();
+			auto hudRenderer = hudObject._Get()->GetComponent<FontRendererComponent>()._Get()->GetRenderer();
+			hudRenderer._Get()->SetPosition(10, 10);
+			hudRenderer._Get()->SetColor(1.0f, 0.5f, 0.2f, 1.0f);	// Orange
 
 			// Create a grid of tiny cubes for depth perception
 			createCubeGrid(125);
